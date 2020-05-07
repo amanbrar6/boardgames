@@ -1,9 +1,9 @@
 import React from 'react';
-import Square from './Square';
+import Board from './Board';
 
 function Codenames() {
     return (
-      <Square/>
+      <Board/>
   
       
     );
