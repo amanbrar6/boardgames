@@ -1,20 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import {colors, words} from './constants';
-
+import {Word} from './Word';
 
 const Code = styled.button`
-  background: ${props => props.bg};
-  color: ${props => (props.bg == "red" || props.bg == "aqua") ? "black" : "white"};
-  font-size: 0.9em;
-  margin: 1em;
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  border: 2px solid black;
+
+  background: ${props => props.bg.color};
+  color: ${props => (props.bg.color == "red" || props.bg == "aqua") ? "black" : "white"};
+  display: inline-block;
   border-radius: 3px;
-  width: 100px;
-  height: 100px;
+  padding: 2.5rem 0.5em;
+  margin: 0.5rem 1rem;
+  width: 11rem;
+  border: 2px solid white;
 `;
 
 function shuffleArray(array) {
@@ -29,45 +27,50 @@ class Board extends React.Component{
     renderBoard(i){
        shuffleArray(colors) 
        shuffleArray(words)
+        var i;
+        const wordList = [];
+        for (var i = 0; i < 25; i++)  {
+            wordList[i] = new Word(words[i],colors[i])
+    }
     return(
     <div>
-        <div> 
-        <Code bg = {colors[0]}>{words[0]}</Code>
-        <Code bg = {colors[1]}>{words[1]}</Code>
-        <Code bg = {colors[2]}>{words[2]}</Code>
-        <Code bg = {colors[3]}>{words[3]}</Code>
-        <Code bg = {colors[4]}>{words[4]}</Code>
+        <div>
+        <Code bg = {wordList[0]}>{words[0]}</Code>
+        <Code bg = {wordList[1]}>{words[1]}</Code>
+        <Code bg = {wordList[2]}>{words[2]}</Code>
+        <Code bg = {wordList[3]}>{words[3]}</Code>
+        <Code bg = {wordList[4]}>{words[4]}</Code>
         </div>
         <div>
-        <Code bg = {colors[5]}>{words[5]}</Code>
-        <Code bg = {colors[6]}>{words[6]}</Code>
-        <Code bg = {colors[7]}>{words[7]}</Code>
-        <Code bg = {colors[8]}>{words[8]}</Code>
-        <Code bg = {colors[9]}>{words[9]}</Code>
+        <Code bg = {wordList[5]}>{words[5]}</Code>
+        <Code bg = {wordList[6]}>{words[6]}</Code>
+        <Code bg = {wordList[7]}>{words[7]}</Code>
+        <Code bg = {wordList[8]}>{words[8]}</Code>
+        <Code bg = {wordList[9]}>{words[9]}</Code>
         </div>
         <div>
-        <Code bg = {colors[10]}>{words[10]}</Code>
-        <Code bg = {colors[11]}>{words[11]}</Code>
-        <Code bg = {colors[12]}>{words[12]}</Code>
-        <Code bg = {colors[13]}>{words[13]}</Code>
-        <Code bg = {colors[14]}>{words[14]}</Code>
+        <Code bg = {wordList[10]}>{words[10]}</Code>
+        <Code bg = {wordList[11]}>{words[11]}</Code>
+        <Code bg = {wordList[12]}>{words[12]}</Code>
+        <Code bg = {wordList[13]}>{words[13]}</Code>
+        <Code bg = {wordList[14]}>{words[14]}</Code>
         </div>
         <div>
-        <Code bg = {colors[15]}>{words[15]}</Code>
-        <Code bg = {colors[16]}>{words[16]}</Code>
-        <Code bg = {colors[17]}>{words[17]}</Code>
-        <Code bg = {colors[18]}>{words[18]}</Code>
-        <Code bg = {colors[19]}>{words[19]}</Code>
+        <Code bg = {wordList[15]}>{words[15]}</Code>
+        <Code bg = {wordList[16]}>{words[16]}</Code>
+        <Code bg = {wordList[17]}>{words[17]}</Code>
+        <Code bg = {wordList[18]}>{words[18]}</Code>
+        <Code bg = {wordList[19]}>{words[19]}</Code>
         </div>
         <div>
-        <Code bg = {colors[20]}>{words[20]}</Code>
-        <Code bg = {colors[21]}>{words[21]}</Code>
-        <Code bg = {colors[22]}>{words[22]}</Code>
-        <Code bg = {colors[23]}>{words[23]}</Code>
-        <Code bg = {colors[24]}>{words[24]}</Code>
+        <Code bg = {wordList[20]}>{words[20]}</Code>
+        <Code bg = {wordList[21]}>{words[21]}</Code>
+        <Code bg = {wordList[22]}>{words[22]}</Code>
+        <Code bg = {wordList[23]}>{words[23]}</Code>
+        <Code bg = {wordList[24]}>{words[24]}</Code>
         </div>
     </div>);
-
+    
    } 
     render(){
         return(
