@@ -6,8 +6,8 @@ import Board from './Board';
 
 const Code = styled.button`
 
-  background: ${"grey"};
-  color: ${ "white"};
+  background: ${props => props.bg.color};
+  color: ${props => (props.bg.color == "red" || props.bg == "aqua") ? "black" : "white"};
   display: inline-block;
   border-radius: 3px;
   padding: 2.5rem 0.5em;
@@ -19,8 +19,8 @@ const Code = styled.button`
 const cardList = [];
             
 
-class Operative extends React.Component{
-    operativeView(){
+class Spymaster extends React.Component{
+    spymasterView(){
         const wordList = this.props.wordList;
         const cardList = [];
         for (var i = 0; i < 25; i++)  {
@@ -38,7 +38,7 @@ class Operative extends React.Component{
     }
     render(){
         return(<div>
-            {this.operativeView()}
+            {this.spymasterView()}
         </div>
             
         );
@@ -47,4 +47,4 @@ class Operative extends React.Component{
 
     }
 
-export default Operative
+export default Spymaster
